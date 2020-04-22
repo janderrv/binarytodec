@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>BinaryToDecimal</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-text">
+            Binary To Decimal Converter
+        </span>
+    </nav>
+    <div class="mt-5 container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <label for="binary">Binary:</label>
+                <input id="binary" value="" type="text" class="form-control form-control" readonly="true">
+                <button id="zero" type="button" class="mt-3 btn btn-dark" onclick="clickZero()">0</button>
+                <button id="one" type="button" class="mt-3 btn btn-dark" onclick="clickOne()">1</button>
+                <hr class="my-4">
+                <label for="decimal">Decimal:</label>
+                <input id="decimal" value="" type="text" class="form-control form-control" readonly="true">
+                <button type="button" class="mt-3 btn btn-success" onclick="convert()">Convert</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var binary = document.getElementById("binary").value;
+
+    function clickZero() {
+        binary = binary + "0";
+        return document.getElementById("binary").value = binary;
+    }
+
+    function clickOne() {
+        binary = binary + "1";
+        return document.getElementById("binary").value = binary;
+    }
+
+    function convert() {
+        return document.getElementById("decimal").value = parseInt(binary, 2);
+    }
+</script>
+
+</html>
